@@ -3,6 +3,7 @@ import {API, graphqlOperation} from 'aws-amplify';
 import {StyleSheet, FlatList, View} from 'react-native';
 import {listMovies} from '../graphql/queries';
 import MovieCard from '../components/MovieCard';
+import SignOutButton from '../components/SignOutButton';
 
 const MoviesList = () => {
   const [movies, setMovies] = useState([]);
@@ -22,6 +23,7 @@ const MoviesList = () => {
   }
   return (
     <View style={styles.container}>
+      <SignOutButton />
       <FlatList
         data={movies}
         renderItem={movie => <MovieCard movie={movie.item} />}

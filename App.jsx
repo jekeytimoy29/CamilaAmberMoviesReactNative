@@ -3,6 +3,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import MoviesList from './src/screens/MoviesList';
 import {MD3LightTheme as DefaultTheme, PaperProvider} from 'react-native-paper';
+import {withAuthenticator} from '@aws-amplify/ui-react-native';
 
 const Stack = createNativeStackNavigator();
 
@@ -31,4 +32,4 @@ const theme = {
   },
 };
 
-export default App;
+export default withAuthenticator(App);
